@@ -61,4 +61,10 @@ Timing includes the numerical controller update and internal integration; it exc
 
 ## Manuscript version
 
-Prepared for the November 2026 minor revision of TJCD-2026-0663.R1. Paired manuscript: `Manuscript_R2_Anonymous_Blue.docx` (MathType revision, prepared 2026-11-08). SHA-256: `8c8649aca0b3654b144bceb6083226b756201f63050acab51ed0dfd12e1ab589`. The manuscript itself is not included in this source repository.
+Prepared for the November 2026 minor revision of TJCD-2026-0663.R1. Paired manuscript: `Manuscript_R2_Anonymous_Blue.docx` (MathType revision, prepared 2026-11-08). SHA-256: `00520e1338a9bc6c950714648d0adcfe23e3fa71aa9954f145c981d2edaad2b4`. The manuscript itself is not included in this source repository.
+
+## Origin of the implementations
+
+The `legacy_*` functions were extracted from the supplied mechanical-arm programs `arm_SMC_ASMC.m`, `arm_SMC_VSC.m` and `arm_PID.m`. They are portable adaptations, not byte-for-byte copies: script side effects were removed, and the missing ASMC helper was specialized to the active linear case. The exact source hashes and these changes are recorded in the full journal supplement.
+
+The common-model `sr_*` implementations, 20-seed comparison, timing benchmark and portable entry points were added during manuscript revision. They are not represented as files already present in the original supplied archive. The current audit recomputed the metrics for all 100 saved parameter sets and matched the saved results; it did not repeat all 100 optimizer searches. The full journal supplement contains the 100-run record and verification results. This compact repository contains the algorithms needed to rerun that study and the selected representative parameters, but not the full saved 100-run archive.
